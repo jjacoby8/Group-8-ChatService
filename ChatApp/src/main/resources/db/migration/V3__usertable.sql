@@ -1,0 +1,5 @@
+CREATE TABLE Users(
+    id UUID NOT NULL PRIMARY KEY,
+    isAdmin BIT(1),
+    name VARCHAR(100) NOT NULL
+)

@@ -1,6 +1,8 @@
 package com.example.demo.dao;
 
 import com.example.demo.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,6 +12,13 @@ import java.util.UUID;
 @Repository("postgres")
 public class UserDataAccessService implements UserDao {
 
+    private final JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public UserDataAccessService(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
     @Override
     public int insertUser(UUID id, boolean isAdmin, User user) {
         return 0;
@@ -17,7 +26,13 @@ public class UserDataAccessService implements UserDao {
 
     @Override
     public List<User> selectAllUsers() {
-        return List.of(new User(UUID.randomUUID(), false,"FROM POSTGRES DB"));
+        final String sql = "SELECT id, isadmin, name FROM users";
+        return jdbcTemplate.query(sql, ((rs, rowNum) -> {
+            UUID id = UUID.fromString(rs.getString("id"));
+            Boolean isAdmin = rs.getBoolean("isAdmin");
+            String name = rs.getString("name");
+            return new User(id, isAdmin, name);
+        }));
     }
 
     @Override
