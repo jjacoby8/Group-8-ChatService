@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>Admin Panel</h1>
+    <h2>Users</h2>
+    <ul>
+      <li>John Doe</li>
+      <li>Jane Doe</li>
+      <li>Jan Doe</li>
+      <li>Jimmy Doe</li>
+   </ul>
+   <h2>Create User</h2>
+   <form>  
+    <div class="create-user-container">   
+        <label>Username : </label>   
+        <input type="text" placeholder="Username" name="username" required>  
+        <label>Password : </label>   
+        <input type="password" placeholder="Password" name="password" required>  
+        <button type="submit">Create User</button>
+    </div>   
+  </form>
+  <h2>Create Admin User</h2>
+  <form>  
+    <div class="create-admin-container">   
+        <label>Username : </label>   
+        <input type="text" placeholder="Username" name="admin-username" required>  
+        <label>Password : </label>   
+        <input type="password" placeholder="Password" name="admin-password" required>  
+        <button type="submit">Create User</button>
+    </div>   
+  </form>     
+  <h2>Reset Admin User Password</h2>
+  <form>  
+    <div class="reset-admin-pass-container">  
+
+      <label for="admin-users">Choose a Admin:</label>
+
+      <select name="admin-users" id="admin-users">
+        <option value="John Doe">John Doe</option>
+        <option value="Jane Doe">Jane Doe</option>
+      </select> 
+      <label>New Password : </label>   
+      <input type="password" placeholder="Password" name="new-password" required>  
+      <button type="submit">Reset Password</button>
+    </div>   
+  </form>    
+  <h2>Delete Admin User Account</h2>
+  <form>  
+    <div class="delete-admin-container">  
+
+      <label for="admin-users">Choose a Admin:</label>
+
+      <select name="admin-users" id="admin-users">
+        <option value="John Doe">John Doe</option>
+        <option value="Jane Doe">Jane Doe</option>
+      </select> 
+      <button type="delete">Delete Account</button>
+    </div>   
+  </form>  
+  <h2>Change Admin User Info</h2>
+  <form>  
+   <div class="change-admin-info-container">  
+    <label for="admin-users">Choose a Admin:</label>
+
+      <select name="admin-users" id="admin-users">
+        <option value="John Doe">John Doe</option>
+        <option value="Jane Doe">Jane Doe</option>
+      </select>  
+
+      <label>Name : </label>   
+      <input type="text" placeholder="Name" name="name" required>  
+      <button type="submit">Change Admin User Name</button>
+   </div>   
+ </form> 
+  </body>
+</html>
