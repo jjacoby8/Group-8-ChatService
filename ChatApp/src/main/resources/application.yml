@@ -1,6 +1,6 @@
 app:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5432/demodb
+    jdbc-url: jdbc:postgresql://dbpoc.cioyk00n5gly.us-east-2.rds.amazonaws.com/demodb
     username: postgres
     password: Password
     pool-size: 30

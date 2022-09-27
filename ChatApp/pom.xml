@@ -99,9 +99,9 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>9.3.1</version>
 				<configuration>
-					<url>jdbc:postgresql://localhost:5432/demodb</url>
+					<url>jdbc:postgresql://dbpoc.cioyk00n5gly.us-east-2.rds.amazonaws.com/demodb</url>
 					<user>postgres</user>
-					<password>Rbchelsea9</password>
+					<password>Password</password>
 				</configuration>
 			</plugin>
 		</plugins>
